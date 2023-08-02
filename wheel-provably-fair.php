@@ -41,7 +41,7 @@ class WheelGame {
             $segmentKey = $this->selectSegment($blackSegmentKeys, $PRNGvalueAdjusted);
         }
 
-        return $segmentKey - 1;
+        return $segmentKey;
     }
 
     private function selectSegment($segmentKeys, $PRNGvalue) {
@@ -63,6 +63,7 @@ $segments = array(0 => 'green',
 
 $wheelGame = new WheelGame();
 $rng = $wheelGame->getSpinResult($serverSeedValue, $clientSeedValue, $nonceValue, $color, $segments);
-$r_color = $segments[$rng];
+$color_from_array = $rng - 1;
+$r_color = $segments[$color_from_array];
 
 echo $r_color;
