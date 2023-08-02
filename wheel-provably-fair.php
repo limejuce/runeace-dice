@@ -41,7 +41,7 @@ class WheelGame {
             $segmentKey = $this->selectSegment($blackSegmentKeys, $PRNGvalueAdjusted);
         }
 
-        return $segmentKey;
+        return $segmentKey - 1;
     }
 
     private function selectSegment($segmentKeys, $PRNGvalue) {
